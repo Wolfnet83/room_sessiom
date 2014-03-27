@@ -1,0 +1,16 @@
+!!!
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th Session ID
+      %th Room ID 
+      %th begin time 
+      %th end time
+  - @sessions.each do |session|
+    %tr
+      %td= session.id
+      %td= session.room.name
+      %td= session.begin_time
+      %td= session.end_time
+      %td= link_to "Destroy!", session, method: :delete 
+= link_to 'New Sessions', new_session_path

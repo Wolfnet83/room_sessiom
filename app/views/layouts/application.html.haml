@@ -1,0 +1,28 @@
+%html
+  %head
+    %title= @title
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-default
+      .container
+        %button.navbar-toggle{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#"} Room Sessions 
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to 'Rooms', rooms_path
+            -#%li= link_to 'Sessions', room_sessions_path
+    .container
+      .row
+        #flash_errors.text-error
+          = content_tag(:div, flash[:error], :id => "flash_error") if flash[:error]
+          = content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert]
+      .row
+        .com-md-8.col-md-offset-1
+          = yield
+    -#= copyright
+

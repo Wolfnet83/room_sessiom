@@ -1,0 +1,6 @@
+= form_for (@room) do |room|
+  -#= room.error_messages
+  %p
+    = room.label "Room name"
+    = room.text_field :name
+    = room.submit :class => "btn"

@@ -1,0 +1,9 @@
+= form_for [@session.room, @session] do |ses|
+  -#= room.error_messages
+  %p
+    = ses.label "begin time"
+    = ses.text_field (:begin_time)
+    = ses.label "end time"
+    = ses.text_field :end_time
+    %br
+    = ses.submit :class => "btn"

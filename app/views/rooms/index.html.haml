@@ -1,0 +1,13 @@
+!!!
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th Room ID
+      %th Room name
+  - @rooms.each do |room|
+    %tr
+      %td= room.id
+      %td= room.name
+      %td= link_to "Create session", new_room_session_path(room) 
+      %td= link_to "Destroy!", room, method: :delete 
+= link_to 'New Room', new_room_path
