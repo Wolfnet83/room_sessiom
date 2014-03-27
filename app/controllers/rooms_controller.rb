@@ -27,6 +27,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @room_sessions = @room.sessions.all
   end
 
 end

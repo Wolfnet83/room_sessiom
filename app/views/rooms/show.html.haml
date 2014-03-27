@@ -2,3 +2,9 @@
 %p
   %b Name:
   = @room.name
+%table.table.table-striped.table-bordered.table-condensed
+  - @room_sessions.each do |rs|
+    %tr
+      %td= rs.id
+      %td= rs.begin_time
+      %td= rs.end_time
